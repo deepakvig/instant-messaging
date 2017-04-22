@@ -1,0 +1,34 @@
+<%= form_tag sessions_path, method: :post, class: "form-horizontal" do %>
+  <h3 class="ui header">Instant Messaging</h3>
+
+  <% if flash[:alert] %>
+    <div class="ui red message"><%= flash[:alert] %></div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label_tag :username, "Name", class: "control-label col-sm-2" %>
+    <div class="col-sm-6">
+      <%= text_field_tag :username, session[:username], class: "form-control", placeholder: "Your name" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :dialect, "Dialect", class: "control-label col-sm-2" %>
+    <div class="col-sm-6">
+      <%= radio_button_tag :dialect, "Yoda", session[:dialect] == "Yoda" %>
+      <%= label_tag "dialect_Yoda", "Yoda", :value => "Yoda" %>
+      <br>
+      <%= radio_button_tag :dialect, "Valley Girl", session[:dialect] == "Valley Girl" %>
+      <%= label_tag "dialect_Valley_Girl", "Valley Girl", :value => "Valley Girl" %>
+      <br>
+      <%= radio_button_tag :dialect, "Binary Code", session[:dialect] == "Binary Code" %>
+      <%= label_tag "dialect_Binary_Code", "Binary Code", :value => "Binary Code" %>
+    </div>
+  </div>
+
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= submit_tag "Start Messaging!", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

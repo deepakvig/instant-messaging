@@ -9,6 +9,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="navbar navbar-default navbar-static-top">
+    	<div class="container">
+      		<div class="navbar-header">
+        		<%= link_to 'Instant Messaging App', root_path, class: 'navbar-brand' %>
+      		</div>
+    	</div>
+  	</div>
+
+  	<div class="container">
+    	<% flash.each do |key, value| %>
+      		<div class="alert alert-<%= key %>">
+        		<%= value %>
+      		</div>
+    	<% end %>
+
+    	<%= yield %>
+  	</div>
   </body>
 </html>
