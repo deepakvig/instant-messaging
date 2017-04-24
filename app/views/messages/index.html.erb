@@ -1,0 +1,18 @@
+<% if session[:username] && session[:dialect] %>
+  <%= render 'messages' %>
+<% else %>
+  <div class="jumbotron">
+	<h1>Welcome to our Instant Messaging App!</h1>
+  	<p class="lead">Please sign in to start messaging</p>
+  	<%= render 'sign_in' %>
+  </div>
+<% end %>
+
+<% if flash[:session_created] %>
+<script>
+publisher = client.publish('/active_users', {
+  active_user: '<%= j render( 'messages/active_user', active_user: current_user  ) %>',
+  user_id: '<%= current_user.user_session_id %>'
+});
+</script>
+<% end %>

@@ -1,24 +1,47 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an instant messaging app
 
-Things you may want to cover:
+Things that are covered:
 
-* Ruby version
+* Login using session
 
-* System dependencies
+* add a dialect
 
-* Configuration
+* API to convert message according to the dialect
 
-* Database creation
+* Update currently active users
 
-* Database initialization
 
-* How to run the test suite
+# Setup
 
-* Services (job queues, cache servers, search engines, etc.)
+bundle install
 
-* Deployment instructions
+rake db:migrate
 
-* ...
+rails s thin
+
+
+# Run Tests
+
+rspec
+
+
+# Using the application
+
+Add a username and select a dialect and login
+
+Send an instant message in chat room
+
+
+# API
+
+POST /api/v1/convert_messages
+params : type, msg
+
+# Pending Items
+
+Remove a user when logs out 
+Dialect image
+Adding more Test cases
+API currently converts only 5 messages in hours (using Free version)

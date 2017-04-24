@@ -1,0 +1,50 @@
+      <div class="chat_container">
+         <div class="col-sm-3 chat_sidebar">
+    	 <div class="row">
+            
+            <div class="member_list">
+               <ul class="list-unstyled" id="active_users">
+                  <% ActiveUser.all.each do |active_user| %>
+                    <%= render 'active_user', active_user: active_user %>
+                  <% end %>
+               </ul>
+            </div></div>
+         </div>
+         <!--chat_sidebar-->
+		 
+		 
+         <div class="col-sm-9 message_section">
+		 <div class="row">
+		 <div class="new_message_head">
+		 <div class="pull-left"><button><i class="fa fa-plus-square-o" aria-hidden="true"></i> Messages</button></div><div class="pull-right"><div class="dropdown">
+  <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  </button>
+</div></div>
+		 </div><!--new_message_head-->
+		 
+		 <div class="chat_area" id="chat_area">
+		 <ul class="list-unstyled" id="messages">
+     <% @messages.each do |message| %>
+        <%= render 'message', message: message %>
+      <% end %>
+		 </ul>
+		 </div><!--chat_area-->
+          <div class="message_write">
+            <%= form_for @message, remote: true do |f| %>
+              <%= f.hidden_field :username, value: session[:username] %>
+    	       <%= f.text_area :body, id: 'new_comment', class: "form-control", placeholder: "type a message" %>
+              <div class="clearfix"></div>
+		          <div class="chat_bottom">
+                <%= f.submit 'Send', class: "pull-right btn btn-success" %>
+              </div>
+            <% end %>
+		        </div>
+		      </div>
+         </div> <!--message_section-->
+      </div>
+
+<script>
+var element = $('#chat_area');
+element.scrollTop(element.prop("scrollHeight"));
+</script>
+   

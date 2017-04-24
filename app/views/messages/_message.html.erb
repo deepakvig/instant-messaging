@@ -1,0 +1,11 @@
+ <% message ||= @message %>
+ <li class="left clearfix">
+                     <span class="chat-img1 pull-left">
+                     <img src="<%= image_path('user_avatar.png') %>" alt="User Avatar" class="img-circle">
+                     </span>
+                     <div class="chat-body1 clearfix">
+                        <p><b><%= message.username %> Says : </b>
+                        <%= message.body %></p>
+						<div class="chat_time pull-right"><%= message.created_at %></div>
+                     </div>
+                  </li>

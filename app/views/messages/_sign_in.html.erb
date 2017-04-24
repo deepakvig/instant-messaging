@@ -15,13 +15,13 @@
   <div class="form-group">
     <%= label_tag :dialect, "Dialect", class: "control-label col-sm-2" %>
     <div class="col-sm-6">
-      <%= radio_button_tag :dialect, "Yoda", session[:dialect] == "Yoda" %>
+      <%= radio_button_tag :dialect, "yoda", session[:dialect] == "yoda" %>
       <%= label_tag "dialect_Yoda", "Yoda", :value => "Yoda" %>
       <br>
-      <%= radio_button_tag :dialect, "Valley Girl", session[:dialect] == "Valley Girl" %>
+      <%= radio_button_tag :dialect, "valley_girl", session[:dialect] == "valley_girl" %>
       <%= label_tag "dialect_Valley_Girl", "Valley Girl", :value => "Valley Girl" %>
       <br>
-      <%= radio_button_tag :dialect, "Binary Code", session[:dialect] == "Binary Code" %>
+      <%= radio_button_tag :dialect, "binary_code", session[:dialect] == "binary_code" %>
       <%= label_tag "dialect_Binary_Code", "Binary Code", :value => "Binary Code" %>
     </div>
   </div>

@@ -1,0 +1,11 @@
+<% active_user ||= @active_user %>
+<li class="left clearfix" id="user_session_id_<%= active_user.user_session_id%>">
+                     <span class="chat-img pull-left">
+                     <img src="<%= image_path('user_avatar.png') %>  " alt="User Avatar" class="img-circle">
+                     </span>
+                     <div class="chat-body clearfix">
+                        <div class="header_sec">
+                           <strong class="primary-font"><%= active_user.username %></strong> 
+                        </div>
+                     </div>
+                  </li>
